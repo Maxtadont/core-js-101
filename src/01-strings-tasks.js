@@ -225,13 +225,34 @@ function getRectangleString(/* width, height */) {
  *
  */
 function encodeToRot13(/* str */) {
-  /* const shift = 13;
-  const shift_start = 65;
-  const shift_end = 122;
-  return str.split('').map((item) => {
-    item.charCodeAt(0) += (shift + shift_end) % (shift_end - shift_start);
-    console.log(item);
-  }); */
+  /* const codes = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  const ablen = codes.length;
+  const shift = 13;
+
+  function shiftElement(code) {
+    const symbcode = (code + shift + ablen) % ablen;
+    return codes[symbcode];
+  }
+
+  function find(char) {
+    return codes.indexOf(char);
+  }
+
+  let resstr = '';
+  for (let i = 0; i < str.length; i += 1) {
+    const idx = find(str[i]);
+    let char = idx > 0 ? shiftElement(idx) : str[i];
+
+    if (str[i].toUpperCase() === str[i]) {
+      char = char.toUpperCase();
+    } else {
+      char = char.toLowerCase();
+    }
+
+    resstr += char;
+  }
+  console.log(resstr);
+  return resstr; */
 
   throw new Error('Not implemented');
 }
