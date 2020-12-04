@@ -112,7 +112,6 @@ function removeFalsyValues(arr) {
     return false;
   }
   const newarr = arr.filter((item) => isTrueElement(item)).filter((item) => item !== false);
-  console.log(newarr);
   return newarr;
 }
 
